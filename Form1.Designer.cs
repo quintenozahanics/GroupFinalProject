@@ -34,29 +34,32 @@ namespace GroupFinalProject
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.patientTab = new System.Windows.Forms.TabPage();
             this.allergyTab = new System.Windows.Forms.TabPage();
+            this.generalHealthTab = new System.Windows.Forms.TabPage();
             this.searchButton = new System.Windows.Forms.Button();
             this.patientButton = new System.Windows.Forms.Button();
             this.allergyButton = new System.Windows.Forms.Button();
             this.generalHealthButton = new System.Windows.Forms.Button();
             this.modifyButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
-            this.generalHealthTab = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 13);
+            this.textBox1.Location = new System.Drawing.Point(17, 16);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(111, 20);
+            this.textBox1.Size = new System.Drawing.Size(147, 22);
             this.textBox1.TabIndex = 1;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(13, 40);
+            this.comboBox1.Location = new System.Drawing.Point(17, 49);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(111, 21);
+            this.comboBox1.Size = new System.Drawing.Size(147, 24);
             this.comboBox1.TabIndex = 2;
             // 
             // tabControl1
@@ -64,101 +67,121 @@ namespace GroupFinalProject
             this.tabControl1.Controls.Add(this.patientTab);
             this.tabControl1.Controls.Add(this.allergyTab);
             this.tabControl1.Controls.Add(this.generalHealthTab);
-            this.tabControl1.Location = new System.Drawing.Point(140, 13);
+            this.tabControl1.Location = new System.Drawing.Point(187, 16);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(658, 437);
+            this.tabControl1.Size = new System.Drawing.Size(877, 538);
             this.tabControl1.TabIndex = 3;
             // 
             // patientTab
             // 
-            this.patientTab.Location = new System.Drawing.Point(4, 22);
+            this.patientTab.Location = new System.Drawing.Point(4, 25);
+            this.patientTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.patientTab.Name = "patientTab";
-            this.patientTab.Padding = new System.Windows.Forms.Padding(3);
-            this.patientTab.Size = new System.Drawing.Size(650, 411);
+            this.patientTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.patientTab.Size = new System.Drawing.Size(869, 509);
             this.patientTab.TabIndex = 0;
             this.patientTab.Text = "Patient";
             this.patientTab.UseVisualStyleBackColor = true;
             // 
             // allergyTab
             // 
-            this.allergyTab.Location = new System.Drawing.Point(4, 22);
+            this.allergyTab.Location = new System.Drawing.Point(4, 25);
+            this.allergyTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.allergyTab.Name = "allergyTab";
-            this.allergyTab.Padding = new System.Windows.Forms.Padding(3);
-            this.allergyTab.Size = new System.Drawing.Size(650, 411);
+            this.allergyTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.allergyTab.Size = new System.Drawing.Size(869, 509);
             this.allergyTab.TabIndex = 1;
             this.allergyTab.Text = "Allergies";
             this.allergyTab.UseVisualStyleBackColor = true;
             // 
+            // generalHealthTab
+            // 
+            this.generalHealthTab.Location = new System.Drawing.Point(4, 25);
+            this.generalHealthTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.generalHealthTab.Name = "generalHealthTab";
+            this.generalHealthTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.generalHealthTab.Size = new System.Drawing.Size(869, 509);
+            this.generalHealthTab.TabIndex = 2;
+            this.generalHealthTab.Text = "General Health";
+            this.generalHealthTab.UseVisualStyleBackColor = true;
+            // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(13, 68);
+            this.searchButton.Location = new System.Drawing.Point(17, 84);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(111, 23);
+            this.searchButton.Size = new System.Drawing.Size(148, 28);
             this.searchButton.TabIndex = 4;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
             // 
             // patientButton
             // 
-            this.patientButton.Location = new System.Drawing.Point(12, 178);
+            this.patientButton.Location = new System.Drawing.Point(16, 219);
+            this.patientButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.patientButton.Name = "patientButton";
-            this.patientButton.Size = new System.Drawing.Size(111, 23);
+            this.patientButton.Size = new System.Drawing.Size(148, 28);
             this.patientButton.TabIndex = 5;
             this.patientButton.Text = "Patient";
             this.patientButton.UseVisualStyleBackColor = true;
             // 
             // allergyButton
             // 
-            this.allergyButton.Location = new System.Drawing.Point(13, 207);
+            this.allergyButton.Location = new System.Drawing.Point(17, 255);
+            this.allergyButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.allergyButton.Name = "allergyButton";
-            this.allergyButton.Size = new System.Drawing.Size(111, 23);
+            this.allergyButton.Size = new System.Drawing.Size(148, 28);
             this.allergyButton.TabIndex = 6;
             this.allergyButton.Text = "Allergies";
             this.allergyButton.UseVisualStyleBackColor = true;
             // 
             // generalHealthButton
             // 
-            this.generalHealthButton.Location = new System.Drawing.Point(13, 236);
+            this.generalHealthButton.Location = new System.Drawing.Point(17, 290);
+            this.generalHealthButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.generalHealthButton.Name = "generalHealthButton";
-            this.generalHealthButton.Size = new System.Drawing.Size(111, 23);
+            this.generalHealthButton.Size = new System.Drawing.Size(148, 28);
             this.generalHealthButton.TabIndex = 7;
             this.generalHealthButton.Text = "General Health";
             this.generalHealthButton.UseVisualStyleBackColor = true;
             // 
             // modifyButton
             // 
-            this.modifyButton.Location = new System.Drawing.Point(13, 378);
+            this.modifyButton.Location = new System.Drawing.Point(17, 465);
+            this.modifyButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.modifyButton.Name = "modifyButton";
-            this.modifyButton.Size = new System.Drawing.Size(111, 23);
+            this.modifyButton.Size = new System.Drawing.Size(148, 28);
             this.modifyButton.TabIndex = 8;
             this.modifyButton.Text = "Modify";
             this.modifyButton.UseVisualStyleBackColor = true;
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(13, 415);
+            this.saveButton.Location = new System.Drawing.Point(17, 511);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(111, 23);
+            this.saveButton.Size = new System.Drawing.Size(148, 28);
             this.saveButton.TabIndex = 9;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             // 
-            // generalHealthTab
+            // label1
             // 
-            this.generalHealthTab.Location = new System.Drawing.Point(4, 22);
-            this.generalHealthTab.Name = "generalHealthTab";
-            this.generalHealthTab.Padding = new System.Windows.Forms.Padding(3);
-            this.generalHealthTab.Size = new System.Drawing.Size(650, 411);
-            this.generalHealthTab.TabIndex = 2;
-            this.generalHealthTab.Text = "General Health";
-            this.generalHealthTab.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(43, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 17);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Does it work?";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.modifyButton);
             this.Controls.Add(this.generalHealthButton);
@@ -168,6 +191,7 @@ namespace GroupFinalProject
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Patient";
             this.tabControl1.ResumeLayout(false);
@@ -190,6 +214,7 @@ namespace GroupFinalProject
         private System.Windows.Forms.Button generalHealthButton;
         private System.Windows.Forms.Button modifyButton;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Label label1;
     }
 }
 
