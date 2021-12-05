@@ -16,5 +16,19 @@ namespace GroupFinalProject
         {
             InitializeComponent();
         }
+
+        //Make the buttons open different tabs
+        private void patientButton_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab("patientTab");
+        }
+        private void allergyButton_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab("allergyTab");
+        }
+        private void generalHealthButton_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab("generalHealthTab");
+        }
     }
 }
