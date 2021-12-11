@@ -43,7 +43,7 @@ namespace GroupFinalProject
 
         }
 
-        private void editButton_Click(object sender, EventArgs e)
+        private void demographEditButton_Click(object sender, EventArgs e)
         {
             iDBox.ReadOnly = false;
             patientIdBox.ReadOnly = false;
@@ -54,7 +54,7 @@ namespace GroupFinalProject
             stateBox.ReadOnly = false;
         }
 
-        private void saveButton_Click(object sender, EventArgs e)
+        private void demographSaveButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -74,7 +74,7 @@ namespace GroupFinalProject
             }
         }
 
-        private void modifyButton_Click(object sender, EventArgs e)
+        private void demographEditPatientButton_Click(object sender, EventArgs e)
         {
             try
             {

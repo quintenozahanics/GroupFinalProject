@@ -37,9 +37,9 @@ namespace GroupFinalProject
             this.demographicsDataGridView = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.iDBox = new System.Windows.Forms.TextBox();
-            this.saveButton = new System.Windows.Forms.Button();
+            this.demographSaveButton = new System.Windows.Forms.Button();
             this.stateBox = new System.Windows.Forms.TextBox();
-            this.modifyButton = new System.Windows.Forms.Button();
+            this.demographEditPatientButton = new System.Windows.Forms.Button();
             this.cityBox = new System.Windows.Forms.TextBox();
             this.addressBox = new System.Windows.Forms.TextBox();
             this.firstNameBox = new System.Windows.Forms.TextBox();
@@ -57,7 +57,7 @@ namespace GroupFinalProject
             this.patientButton = new System.Windows.Forms.Button();
             this.allergyButton = new System.Windows.Forms.Button();
             this.generalHealthButton = new System.Windows.Forms.Button();
-            this.editButton = new System.Windows.Forms.Button();
+            this.demographEditButton = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,13 +111,13 @@ namespace GroupFinalProject
             // patientTab
             // 
             this.patientTab.AutoScroll = true;
-            this.patientTab.Controls.Add(this.editButton);
+            this.patientTab.Controls.Add(this.demographEditButton);
             this.patientTab.Controls.Add(this.demographicsDataGridView);
             this.patientTab.Controls.Add(this.label7);
             this.patientTab.Controls.Add(this.iDBox);
-            this.patientTab.Controls.Add(this.saveButton);
+            this.patientTab.Controls.Add(this.demographSaveButton);
             this.patientTab.Controls.Add(this.stateBox);
-            this.patientTab.Controls.Add(this.modifyButton);
+            this.patientTab.Controls.Add(this.demographEditPatientButton);
             this.patientTab.Controls.Add(this.cityBox);
             this.patientTab.Controls.Add(this.addressBox);
             this.patientTab.Controls.Add(this.firstNameBox);
@@ -173,15 +173,15 @@ namespace GroupFinalProject
             this.iDBox.Size = new System.Drawing.Size(191, 20);
             this.iDBox.TabIndex = 13;
             // 
-            // saveButton
+            // demographSaveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(600, 371);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(111, 23);
-            this.saveButton.TabIndex = 9;
-            this.saveButton.Text = "Save New Patient";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            this.demographSaveButton.Location = new System.Drawing.Point(600, 371);
+            this.demographSaveButton.Name = "demographSaveButton";
+            this.demographSaveButton.Size = new System.Drawing.Size(111, 23);
+            this.demographSaveButton.TabIndex = 9;
+            this.demographSaveButton.Text = "Save New Patient";
+            this.demographSaveButton.UseVisualStyleBackColor = true;
+            this.demographSaveButton.Click += new System.EventHandler(this.demographSaveButton_Click);
             // 
             // stateBox
             // 
@@ -191,15 +191,15 @@ namespace GroupFinalProject
             this.stateBox.Size = new System.Drawing.Size(226, 20);
             this.stateBox.TabIndex = 11;
             // 
-            // modifyButton
+            // demographEditPatientButton
             // 
-            this.modifyButton.Location = new System.Drawing.Point(483, 371);
-            this.modifyButton.Name = "modifyButton";
-            this.modifyButton.Size = new System.Drawing.Size(111, 23);
-            this.modifyButton.TabIndex = 8;
-            this.modifyButton.Text = "Edit Patient";
-            this.modifyButton.UseVisualStyleBackColor = true;
-            this.modifyButton.Click += new System.EventHandler(this.modifyButton_Click);
+            this.demographEditPatientButton.Location = new System.Drawing.Point(483, 371);
+            this.demographEditPatientButton.Name = "demographEditPatientButton";
+            this.demographEditPatientButton.Size = new System.Drawing.Size(111, 23);
+            this.demographEditPatientButton.TabIndex = 8;
+            this.demographEditPatientButton.Text = "Edit Patient";
+            this.demographEditPatientButton.UseVisualStyleBackColor = true;
+            this.demographEditPatientButton.Click += new System.EventHandler(this.demographEditPatientButton_Click);
             // 
             // cityBox
             // 
@@ -360,15 +360,15 @@ namespace GroupFinalProject
             this.generalHealthButton.UseVisualStyleBackColor = true;
             this.generalHealthButton.Click += new System.EventHandler(this.generalHealthButton_Click);
             // 
-            // editButton
+            // demographEditButton
             // 
-            this.editButton.Location = new System.Drawing.Point(6, 371);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(111, 23);
-            this.editButton.TabIndex = 18;
-            this.editButton.Text = "Enable Edit";
-            this.editButton.UseVisualStyleBackColor = true;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            this.demographEditButton.Location = new System.Drawing.Point(6, 371);
+            this.demographEditButton.Name = "demographEditButton";
+            this.demographEditButton.Size = new System.Drawing.Size(111, 23);
+            this.demographEditButton.TabIndex = 18;
+            this.demographEditButton.Text = "Enable Edit";
+            this.demographEditButton.UseVisualStyleBackColor = true;
+            this.demographEditButton.Click += new System.EventHandler(this.demographEditButton_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -472,8 +472,8 @@ namespace GroupFinalProject
         private System.Windows.Forms.Button patientButton;
         private System.Windows.Forms.Button allergyButton;
         private System.Windows.Forms.Button generalHealthButton;
-        private System.Windows.Forms.Button modifyButton;
-        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button demographEditPatientButton;
+        private System.Windows.Forms.Button demographSaveButton;
         private System.Windows.Forms.TextBox firstNameBox;
         private System.Windows.Forms.TextBox lastNameBox;
         private System.Windows.Forms.TextBox patientIdBox;
@@ -500,7 +500,7 @@ namespace GroupFinalProject
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.Button demographEditButton;
     }
 }
 
