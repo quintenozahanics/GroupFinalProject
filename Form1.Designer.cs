@@ -29,29 +29,60 @@ namespace GroupFinalProject
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            this.searchBox = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.patientTab = new System.Windows.Forms.TabPage();
+            this.demographicsDataGridView = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.iDBox = new System.Windows.Forms.TextBox();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.stateBox = new System.Windows.Forms.TextBox();
+            this.modifyButton = new System.Windows.Forms.Button();
+            this.cityBox = new System.Windows.Forms.TextBox();
+            this.addressBox = new System.Windows.Forms.TextBox();
+            this.firstNameBox = new System.Windows.Forms.TextBox();
+            this.lastNameBox = new System.Windows.Forms.TextBox();
+            this.patientIdBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.allergyTab = new System.Windows.Forms.TabPage();
             this.generalHealthTab = new System.Windows.Forms.TabPage();
             this.searchButton = new System.Windows.Forms.Button();
             this.patientButton = new System.Windows.Forms.Button();
             this.allergyButton = new System.Windows.Forms.Button();
             this.generalHealthButton = new System.Windows.Forms.Button();
-            this.modifyButton = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.demographicsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.patientDatabaseDataSet = new GroupFinalProject.PatientDatabaseDataSet();
+            this.demographicsTableAdapter = new GroupFinalProject.PatientDatabaseDataSetTableAdapters.DemographicsTableAdapter();
+            this.tableAdapterManager = new GroupFinalProject.PatientDatabaseDataSetTableAdapters.TableAdapterManager();
             this.tabControl1.SuspendLayout();
+            this.patientTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.demographicsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.demographicsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientDatabaseDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // searchBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(17, 16);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 22);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Search";
+            this.searchBox.Location = new System.Drawing.Point(12, 35);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(111, 20);
+            this.searchBox.TabIndex = 1;
+            this.searchBox.Text = "Search";
             // 
             // comboBox1
             // 
@@ -61,10 +92,9 @@ namespace GroupFinalProject
             "Search by Patient ID",
             "Search by Last Name",
             "Search by Phone Number"});
-            this.comboBox1.Location = new System.Drawing.Point(17, 49);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Location = new System.Drawing.Point(12, 68);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(147, 24);
+            this.comboBox1.Size = new System.Drawing.Size(111, 21);
             this.comboBox1.TabIndex = 2;
             // 
             // tabControl1
@@ -72,62 +102,239 @@ namespace GroupFinalProject
             this.tabControl1.Controls.Add(this.patientTab);
             this.tabControl1.Controls.Add(this.allergyTab);
             this.tabControl1.Controls.Add(this.generalHealthTab);
-            this.tabControl1.Location = new System.Drawing.Point(187, 16);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Location = new System.Drawing.Point(140, 13);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(877, 538);
+            this.tabControl1.Size = new System.Drawing.Size(725, 437);
             this.tabControl1.TabIndex = 3;
             // 
             // patientTab
             // 
-            this.patientTab.Location = new System.Drawing.Point(4, 25);
-            this.patientTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.patientTab.AutoScroll = true;
+            this.patientTab.Controls.Add(this.editButton);
+            this.patientTab.Controls.Add(this.demographicsDataGridView);
+            this.patientTab.Controls.Add(this.label7);
+            this.patientTab.Controls.Add(this.iDBox);
+            this.patientTab.Controls.Add(this.saveButton);
+            this.patientTab.Controls.Add(this.stateBox);
+            this.patientTab.Controls.Add(this.modifyButton);
+            this.patientTab.Controls.Add(this.cityBox);
+            this.patientTab.Controls.Add(this.addressBox);
+            this.patientTab.Controls.Add(this.firstNameBox);
+            this.patientTab.Controls.Add(this.lastNameBox);
+            this.patientTab.Controls.Add(this.patientIdBox);
+            this.patientTab.Controls.Add(this.label6);
+            this.patientTab.Controls.Add(this.label5);
+            this.patientTab.Controls.Add(this.label4);
+            this.patientTab.Controls.Add(this.label3);
+            this.patientTab.Controls.Add(this.label2);
+            this.patientTab.Controls.Add(this.label1);
+            this.patientTab.Location = new System.Drawing.Point(4, 22);
             this.patientTab.Name = "patientTab";
-            this.patientTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.patientTab.Size = new System.Drawing.Size(869, 509);
+            this.patientTab.Padding = new System.Windows.Forms.Padding(3);
+            this.patientTab.Size = new System.Drawing.Size(717, 411);
             this.patientTab.TabIndex = 0;
             this.patientTab.Text = "Demographics";
             this.patientTab.UseVisualStyleBackColor = true;
             // 
+            // demographicsDataGridView
+            // 
+            this.demographicsDataGridView.AutoGenerateColumns = false;
+            this.demographicsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.demographicsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
+            this.demographicsDataGridView.DataSource = this.demographicsBindingSource;
+            this.demographicsDataGridView.Location = new System.Drawing.Point(1, 0);
+            this.demographicsDataGridView.Name = "demographicsDataGridView";
+            this.demographicsDataGridView.Size = new System.Drawing.Size(710, 114);
+            this.demographicsDataGridView.TabIndex = 17;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(211, 131);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(26, 20);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "ID";
+            // 
+            // iDBox
+            // 
+            this.iDBox.Location = new System.Drawing.Point(243, 131);
+            this.iDBox.Name = "iDBox";
+            this.iDBox.ReadOnly = true;
+            this.iDBox.Size = new System.Drawing.Size(191, 20);
+            this.iDBox.TabIndex = 13;
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(600, 371);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(111, 23);
+            this.saveButton.TabIndex = 9;
+            this.saveButton.Text = "Save New Patient";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // stateBox
+            // 
+            this.stateBox.Location = new System.Drawing.Point(418, 314);
+            this.stateBox.Name = "stateBox";
+            this.stateBox.ReadOnly = true;
+            this.stateBox.Size = new System.Drawing.Size(226, 20);
+            this.stateBox.TabIndex = 11;
+            // 
+            // modifyButton
+            // 
+            this.modifyButton.Location = new System.Drawing.Point(483, 371);
+            this.modifyButton.Name = "modifyButton";
+            this.modifyButton.Size = new System.Drawing.Size(111, 23);
+            this.modifyButton.TabIndex = 8;
+            this.modifyButton.Text = "Edit Patient";
+            this.modifyButton.UseVisualStyleBackColor = true;
+            this.modifyButton.Click += new System.EventHandler(this.modifyButton_Click);
+            // 
+            // cityBox
+            // 
+            this.cityBox.Location = new System.Drawing.Point(418, 242);
+            this.cityBox.Name = "cityBox";
+            this.cityBox.ReadOnly = true;
+            this.cityBox.Size = new System.Drawing.Size(226, 20);
+            this.cityBox.TabIndex = 10;
+            // 
+            // addressBox
+            // 
+            this.addressBox.Location = new System.Drawing.Point(418, 175);
+            this.addressBox.Name = "addressBox";
+            this.addressBox.ReadOnly = true;
+            this.addressBox.Size = new System.Drawing.Size(226, 20);
+            this.addressBox.TabIndex = 9;
+            // 
+            // firstNameBox
+            // 
+            this.firstNameBox.Location = new System.Drawing.Point(93, 314);
+            this.firstNameBox.Name = "firstNameBox";
+            this.firstNameBox.ReadOnly = true;
+            this.firstNameBox.Size = new System.Drawing.Size(191, 20);
+            this.firstNameBox.TabIndex = 8;
+            // 
+            // lastNameBox
+            // 
+            this.lastNameBox.Location = new System.Drawing.Point(93, 242);
+            this.lastNameBox.Name = "lastNameBox";
+            this.lastNameBox.ReadOnly = true;
+            this.lastNameBox.Size = new System.Drawing.Size(191, 20);
+            this.lastNameBox.TabIndex = 7;
+            // 
+            // patientIdBox
+            // 
+            this.patientIdBox.Location = new System.Drawing.Point(93, 174);
+            this.patientIdBox.Name = "patientIdBox";
+            this.patientIdBox.ReadOnly = true;
+            this.patientIdBox.Size = new System.Drawing.Size(191, 20);
+            this.patientIdBox.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(363, 315);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 20);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "State";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(373, 243);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 20);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "City";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(290, 172);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Street Address";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(2, 315);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "First Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 243);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Last Name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 175);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Patient ID";
+            // 
             // allergyTab
             // 
-            this.allergyTab.Location = new System.Drawing.Point(4, 25);
-            this.allergyTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.allergyTab.Location = new System.Drawing.Point(4, 22);
             this.allergyTab.Name = "allergyTab";
-            this.allergyTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.allergyTab.Size = new System.Drawing.Size(869, 509);
+            this.allergyTab.Padding = new System.Windows.Forms.Padding(3);
+            this.allergyTab.Size = new System.Drawing.Size(717, 411);
             this.allergyTab.TabIndex = 1;
             this.allergyTab.Text = "Allergies";
             this.allergyTab.UseVisualStyleBackColor = true;
             // 
             // generalHealthTab
             // 
-            this.generalHealthTab.Location = new System.Drawing.Point(4, 25);
-            this.generalHealthTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.generalHealthTab.Location = new System.Drawing.Point(4, 22);
             this.generalHealthTab.Name = "generalHealthTab";
-            this.generalHealthTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.generalHealthTab.Size = new System.Drawing.Size(869, 509);
+            this.generalHealthTab.Padding = new System.Windows.Forms.Padding(3);
+            this.generalHealthTab.Size = new System.Drawing.Size(717, 411);
             this.generalHealthTab.TabIndex = 2;
             this.generalHealthTab.Text = "General Health";
             this.generalHealthTab.UseVisualStyleBackColor = true;
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(17, 84);
-            this.searchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchButton.Location = new System.Drawing.Point(12, 95);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(148, 28);
+            this.searchButton.Size = new System.Drawing.Size(111, 23);
             this.searchButton.TabIndex = 4;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
             // 
             // patientButton
             // 
-            this.patientButton.Location = new System.Drawing.Point(16, 219);
-            this.patientButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.patientButton.Location = new System.Drawing.Point(12, 204);
             this.patientButton.Name = "patientButton";
-            this.patientButton.Size = new System.Drawing.Size(148, 28);
+            this.patientButton.Size = new System.Drawing.Size(111, 23);
             this.patientButton.TabIndex = 5;
             this.patientButton.Text = "Patient";
             this.patientButton.UseVisualStyleBackColor = true;
@@ -135,10 +342,9 @@ namespace GroupFinalProject
             // 
             // allergyButton
             // 
-            this.allergyButton.Location = new System.Drawing.Point(17, 255);
-            this.allergyButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.allergyButton.Location = new System.Drawing.Point(12, 274);
             this.allergyButton.Name = "allergyButton";
-            this.allergyButton.Size = new System.Drawing.Size(148, 28);
+            this.allergyButton.Size = new System.Drawing.Size(111, 23);
             this.allergyButton.TabIndex = 6;
             this.allergyButton.Text = "Allergies";
             this.allergyButton.UseVisualStyleBackColor = true;
@@ -146,53 +352,109 @@ namespace GroupFinalProject
             // 
             // generalHealthButton
             // 
-            this.generalHealthButton.Location = new System.Drawing.Point(17, 290);
-            this.generalHealthButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.generalHealthButton.Location = new System.Drawing.Point(13, 350);
             this.generalHealthButton.Name = "generalHealthButton";
-            this.generalHealthButton.Size = new System.Drawing.Size(148, 28);
+            this.generalHealthButton.Size = new System.Drawing.Size(111, 23);
             this.generalHealthButton.TabIndex = 7;
             this.generalHealthButton.Text = "General Health";
             this.generalHealthButton.UseVisualStyleBackColor = true;
             this.generalHealthButton.Click += new System.EventHandler(this.generalHealthButton_Click);
             // 
-            // modifyButton
+            // editButton
             // 
-            this.modifyButton.Location = new System.Drawing.Point(17, 465);
-            this.modifyButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.modifyButton.Name = "modifyButton";
-            this.modifyButton.Size = new System.Drawing.Size(148, 28);
-            this.modifyButton.TabIndex = 8;
-            this.modifyButton.Text = "Modify";
-            this.modifyButton.UseVisualStyleBackColor = true;
+            this.editButton.Location = new System.Drawing.Point(6, 371);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(111, 23);
+            this.editButton.TabIndex = 18;
+            this.editButton.Text = "Enable Edit";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
-            // saveButton
+            // dataGridViewTextBoxColumn1
             // 
-            this.saveButton.Location = new System.Drawing.Point(17, 511);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(148, 28);
-            this.saveButton.TabIndex = 9;
-            this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "PatientID";
+            this.dataGridViewTextBoxColumn2.HeaderText = "PatientID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "FirstName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "FirstName";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "LastName";
+            this.dataGridViewTextBoxColumn4.HeaderText = "LastName";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "StreetAddress";
+            this.dataGridViewTextBoxColumn5.HeaderText = "StreetAddress";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "City";
+            this.dataGridViewTextBoxColumn6.HeaderText = "City";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "State";
+            this.dataGridViewTextBoxColumn7.HeaderText = "State";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // demographicsBindingSource
+            // 
+            this.demographicsBindingSource.DataMember = "Demographics";
+            this.demographicsBindingSource.DataSource = this.patientDatabaseDataSet;
+            // 
+            // patientDatabaseDataSet
+            // 
+            this.patientDatabaseDataSet.DataSetName = "PatientDatabaseDataSet";
+            this.patientDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // demographicsTableAdapter
+            // 
+            this.demographicsTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AllergyTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.DemographicsTableAdapter = this.demographicsTableAdapter;
+            this.tableAdapterManager.GeneralTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = GroupFinalProject.PatientDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.modifyButton);
+            this.ClientSize = new System.Drawing.Size(877, 446);
             this.Controls.Add(this.generalHealthButton);
             this.Controls.Add(this.allergyButton);
             this.Controls.Add(this.patientButton);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.searchBox);
             this.Name = "Form1";
             this.Text = "Patient";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
+            this.patientTab.ResumeLayout(false);
+            this.patientTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.demographicsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.demographicsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientDatabaseDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,7 +462,7 @@ namespace GroupFinalProject
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage patientTab;
@@ -212,6 +474,33 @@ namespace GroupFinalProject
         private System.Windows.Forms.Button generalHealthButton;
         private System.Windows.Forms.Button modifyButton;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.TextBox firstNameBox;
+        private System.Windows.Forms.TextBox lastNameBox;
+        private System.Windows.Forms.TextBox patientIdBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox stateBox;
+        private System.Windows.Forms.TextBox cityBox;
+        private System.Windows.Forms.TextBox addressBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox iDBox;
+        private PatientDatabaseDataSet patientDatabaseDataSet;
+        private System.Windows.Forms.BindingSource demographicsBindingSource;
+        private PatientDatabaseDataSetTableAdapters.DemographicsTableAdapter demographicsTableAdapter;
+        private PatientDatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView demographicsDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.Button editButton;
     }
 }
 
