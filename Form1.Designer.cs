@@ -34,7 +34,17 @@ namespace GroupFinalProject
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.patientTab = new System.Windows.Forms.TabPage();
+            this.demographEditButton = new System.Windows.Forms.Button();
             this.demographicsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.demographicsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.patientDatabaseDataSet = new GroupFinalProject.PatientDatabaseDataSet();
             this.label7 = new System.Windows.Forms.Label();
             this.iDBox = new System.Windows.Forms.TextBox();
             this.demographSaveButton = new System.Windows.Forms.Button();
@@ -57,16 +67,7 @@ namespace GroupFinalProject
             this.patientButton = new System.Windows.Forms.Button();
             this.allergyButton = new System.Windows.Forms.Button();
             this.generalHealthButton = new System.Windows.Forms.Button();
-            this.demographEditButton = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.demographicsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.patientDatabaseDataSet = new GroupFinalProject.PatientDatabaseDataSet();
+            this.label8 = new System.Windows.Forms.Label();
             this.demographicsTableAdapter = new GroupFinalProject.PatientDatabaseDataSetTableAdapters.DemographicsTableAdapter();
             this.tableAdapterManager = new GroupFinalProject.PatientDatabaseDataSetTableAdapters.TableAdapterManager();
             this.tabControl1.SuspendLayout();
@@ -78,11 +79,10 @@ namespace GroupFinalProject
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(12, 35);
+            this.searchBox.Location = new System.Drawing.Point(7, 35);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(111, 20);
+            this.searchBox.Size = new System.Drawing.Size(127, 20);
             this.searchBox.TabIndex = 1;
-            this.searchBox.Text = "Search";
             // 
             // comboBox1
             // 
@@ -92,9 +92,9 @@ namespace GroupFinalProject
             "Search by Patient ID",
             "Search by Last Name",
             "Search by Phone Number"});
-            this.comboBox1.Location = new System.Drawing.Point(12, 68);
+            this.comboBox1.Location = new System.Drawing.Point(7, 68);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(111, 21);
+            this.comboBox1.Size = new System.Drawing.Size(127, 21);
             this.comboBox1.TabIndex = 2;
             // 
             // tabControl1
@@ -137,6 +137,16 @@ namespace GroupFinalProject
             this.patientTab.Text = "Demographics";
             this.patientTab.UseVisualStyleBackColor = true;
             // 
+            // demographEditButton
+            // 
+            this.demographEditButton.Location = new System.Drawing.Point(6, 371);
+            this.demographEditButton.Name = "demographEditButton";
+            this.demographEditButton.Size = new System.Drawing.Size(111, 23);
+            this.demographEditButton.TabIndex = 18;
+            this.demographEditButton.Text = "Modify";
+            this.demographEditButton.UseVisualStyleBackColor = true;
+            this.demographEditButton.Click += new System.EventHandler(this.demographEditButton_Click);
+            // 
             // demographicsDataGridView
             // 
             this.demographicsDataGridView.AutoGenerateColumns = false;
@@ -152,8 +162,61 @@ namespace GroupFinalProject
             this.demographicsDataGridView.DataSource = this.demographicsBindingSource;
             this.demographicsDataGridView.Location = new System.Drawing.Point(1, 0);
             this.demographicsDataGridView.Name = "demographicsDataGridView";
-            this.demographicsDataGridView.Size = new System.Drawing.Size(710, 114);
+            this.demographicsDataGridView.Size = new System.Drawing.Size(716, 114);
             this.demographicsDataGridView.TabIndex = 17;
+            this.demographicsDataGridView.SelectionChanged += new System.EventHandler(this.demographicsDataGridView_SelectionChanged);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "PatientID";
+            this.dataGridViewTextBoxColumn2.HeaderText = "PatientID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "FirstName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "FirstName";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "LastName";
+            this.dataGridViewTextBoxColumn4.HeaderText = "LastName";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "StreetAddress";
+            this.dataGridViewTextBoxColumn5.HeaderText = "StreetAddress";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "City";
+            this.dataGridViewTextBoxColumn6.HeaderText = "City";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "State";
+            this.dataGridViewTextBoxColumn7.HeaderText = "State";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // demographicsBindingSource
+            // 
+            this.demographicsBindingSource.DataMember = "Demographics";
+            this.demographicsBindingSource.DataSource = this.patientDatabaseDataSet;
+            // 
+            // patientDatabaseDataSet
+            // 
+            this.patientDatabaseDataSet.DataSetName = "PatientDatabaseDataSet";
+            this.patientDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label7
             // 
@@ -323,12 +386,13 @@ namespace GroupFinalProject
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(12, 95);
+            this.searchButton.Location = new System.Drawing.Point(7, 95);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(111, 23);
+            this.searchButton.Size = new System.Drawing.Size(127, 23);
             this.searchButton.TabIndex = 4;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // patientButton
             // 
@@ -360,67 +424,14 @@ namespace GroupFinalProject
             this.generalHealthButton.UseVisualStyleBackColor = true;
             this.generalHealthButton.Click += new System.EventHandler(this.generalHealthButton_Click);
             // 
-            // demographEditButton
+            // label8
             // 
-            this.demographEditButton.Location = new System.Drawing.Point(6, 371);
-            this.demographEditButton.Name = "demographEditButton";
-            this.demographEditButton.Size = new System.Drawing.Size(111, 23);
-            this.demographEditButton.TabIndex = 18;
-            this.demographEditButton.Text = "Enable Edit";
-            this.demographEditButton.UseVisualStyleBackColor = true;
-            this.demographEditButton.Click += new System.EventHandler(this.demographEditButton_Click);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "PatientID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "PatientID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "FirstName";
-            this.dataGridViewTextBoxColumn3.HeaderText = "FirstName";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "LastName";
-            this.dataGridViewTextBoxColumn4.HeaderText = "LastName";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "StreetAddress";
-            this.dataGridViewTextBoxColumn5.HeaderText = "StreetAddress";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "City";
-            this.dataGridViewTextBoxColumn6.HeaderText = "City";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "State";
-            this.dataGridViewTextBoxColumn7.HeaderText = "State";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // demographicsBindingSource
-            // 
-            this.demographicsBindingSource.DataMember = "Demographics";
-            this.demographicsBindingSource.DataSource = this.patientDatabaseDataSet;
-            // 
-            // patientDatabaseDataSet
-            // 
-            this.patientDatabaseDataSet.DataSetName = "PatientDatabaseDataSet";
-            this.patientDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Search:";
             // 
             // demographicsTableAdapter
             // 
@@ -439,6 +450,7 @@ namespace GroupFinalProject
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 446);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.generalHealthButton);
             this.Controls.Add(this.allergyButton);
             this.Controls.Add(this.patientButton);
@@ -447,7 +459,6 @@ namespace GroupFinalProject
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.searchBox);
             this.Name = "Form1";
-            this.Text = "Patient";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.patientTab.ResumeLayout(false);
@@ -501,6 +512,7 @@ namespace GroupFinalProject
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.Button demographEditButton;
+        private System.Windows.Forms.Label label8;
     }
 }
 

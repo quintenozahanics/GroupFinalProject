@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
 
@@ -33,14 +34,12 @@ namespace GroupFinalProject
             this.Validate();
             this.demographicsBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.patientDatabaseDataSet);
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'patientDatabaseDataSet.Demographics' table. You can move, or remove it, as needed.
             this.demographicsTableAdapter.Fill(this.patientDatabaseDataSet.Demographics);
-
         }
 
         private void demographEditButton_Click(object sender, EventArgs e)
@@ -94,6 +93,43 @@ namespace GroupFinalProject
             {
                 MessageBox.Show("Error " + ex);
             }
-        }   
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < demographicsDataGridView.Rows.Count; i++)
+            {
+                if (!demographicsDataGridView.Rows[i].IsNewRow)
+                {
+                    if (demographicsDataGridView[0, i].Value.ToString() == searchBox.Text)
+                        demographicsDataGridView.Rows[i].Selected = true;
+                    else
+                        demographicsDataGridView.Rows[i].Selected = false;
+                }
+            }
+        }
+
+
+        private void demographicsDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewCell cell = null;
+            foreach (DataGridViewCell selectedCell in demographicsDataGridView.SelectedCells)
+            {
+                cell = selectedCell;
+                break;
+            }
+
+            if (cell != null)
+            {
+                DataGridViewRow row = cell.OwningRow;
+                iDBox.Text = row.Cells[0].Value.ToString();
+                patientIdBox.Text = row.Cells[1].Value.ToString();
+                lastNameBox.Text = row.Cells[3].Value.ToString();
+                firstNameBox.Text = row.Cells[2].Value.ToString();
+                addressBox.Text = row.Cells[4].Value.ToString();
+                cityBox.Text = row.Cells[5].Value.ToString();
+                stateBox.Text = row.Cells[6].Value.ToString();
+            }
+        }
     }
 }
