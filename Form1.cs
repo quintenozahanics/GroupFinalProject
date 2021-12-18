@@ -158,7 +158,7 @@ namespace GroupFinalProject
             {
                 if (!allergyDataGridView.Rows[i].IsNewRow)
                 {
-                    if (allergyDataGridView[0, i].Value.ToString() == iDBoxA.Text)
+                    if (allergyDataGridView[1, i].Value.ToString() == iDBoxA.Text)
                         allergyDataGridView.Rows[i].Selected = true;
                     else
                         allergyDataGridView.Rows[i].Selected = false;
@@ -166,7 +166,7 @@ namespace GroupFinalProject
             }
         }
 
-        private void allergyDataGridView_SelectionChanged(object sender, EventArgs e)
+        private void allergyDataGridView_SelectionChanged_1(object sender, EventArgs e)
         {
             DataGridViewCell cell = null;
             foreach (DataGridViewCell selectedCell in allergyDataGridView.SelectedCells)
@@ -178,9 +178,9 @@ namespace GroupFinalProject
             if (cell != null)
             {
                 DataGridViewRow row = cell.OwningRow;
-                patientIDBoxA.Text = row.Cells[1].Value.ToString();
+                allergyIDBoxA.Text = row.Cells[0].Value.ToString();
                 allergenBoxA.Text = row.Cells[2].Value.ToString();
-                //allergenDateTimePicker.Value = row.Cells[3].Value.ToString();
+                //allergenDateTimePicker.Value = row.Cells[3].Value;
                 medicationNeedBoxA.Text = row.Cells[4].Value.ToString();
             }
         }
@@ -188,7 +188,7 @@ namespace GroupFinalProject
         private void modifyBtnA_Click(object sender, EventArgs e)
         {
             iDBoxA.ReadOnly = false;
-            patientIDBoxA.ReadOnly = false;
+            allergyIDBoxA.ReadOnly = false;
             allergenBoxA.ReadOnly = false;
             medicationNeedBoxA.ReadOnly = false;
         }
