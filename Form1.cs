@@ -45,10 +45,10 @@ namespace GroupFinalProject
             }
            
             Namelabel1.Visible = true;
-            Namelabel1.Text = firstNameBox.Text + " " + lastNameBox.Text;
+            Namelabel1.Text = firstNameBox.Text + " " + lastNameBox.Text + ", " + ageBox.Text;
 
             namelabel2.Visible = true;
-            namelabel2.Text = firstNameBox.Text + " " + lastNameBox.Text;
+            namelabel2.Text = firstNameBox.Text + " " + lastNameBox.Text + ", " + ageBox.Text;
         }
 
 // Demographics Control // Demographics Control // DemoGraphics Control // Demographics Control
@@ -78,6 +78,7 @@ namespace GroupFinalProject
             addressBox.ReadOnly = false;
             cityBox.ReadOnly = false;
             stateBox.ReadOnly = false;
+            ageBox.ReadOnly = false;
         }
 
         private void demographSaveButton_Click(object sender, EventArgs e)
@@ -122,7 +123,7 @@ namespace GroupFinalProject
             }
         }
 
-        private void demographicsDataGridView_SelectionChanged(object sender, EventArgs e)
+        private void demographicsDataGridView_SelectionChanged_1(object sender, EventArgs e)
         {
             DataGridViewCell cell = null;
             foreach (DataGridViewCell selectedCell in demographicsDataGridView.SelectedCells)
@@ -141,6 +142,7 @@ namespace GroupFinalProject
                 addressBox.Text = row.Cells[4].Value.ToString();
                 cityBox.Text = row.Cells[5].Value.ToString();
                 stateBox.Text = row.Cells[6].Value.ToString();
+                ageBox.Text = row.Cells[7].Value.ToString();
             }
         }
 
@@ -263,6 +265,6 @@ namespace GroupFinalProject
             {
                 MessageBox.Show("Error " + ex);
             }
-        }
+        }  
     }
 }
