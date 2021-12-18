@@ -180,7 +180,7 @@ namespace GroupFinalProject
                 DataGridViewRow row = cell.OwningRow;
                 allergyIDBoxA.Text = row.Cells[0].Value.ToString();
                 allergenBoxA.Text = row.Cells[2].Value.ToString();
-                //allergenDateTimePicker.Value = row.Cells[3].Value;
+                //allergenDateTimePicker.Value = (DateTime)row.Cells[3].Value;
                 medicationNeedBoxA.Text = row.Cells[4].Value.ToString();
             }
         }

@@ -61,6 +61,12 @@ namespace GroupFinalProject
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.allergyTab = new System.Windows.Forms.TabPage();
+            this.allergyDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.allergyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Namelabel1 = new System.Windows.Forms.Label();
             this.allergenDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -116,23 +122,17 @@ namespace GroupFinalProject
             this.tableAdapterManager = new GroupFinalProject.PatientDatabaseDataSetTableAdapters.TableAdapterManager();
             this.allergyTableAdapter = new GroupFinalProject.PatientDatabaseDataSetTableAdapters.AllergyTableAdapter();
             this.generalTableAdapter = new GroupFinalProject.PatientDatabaseDataSetTableAdapters.GeneralTableAdapter();
-            this.allergyDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.patientTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.demographicsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.demographicsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientDatabaseDataSet)).BeginInit();
             this.allergyTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.allergyDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.allergyBindingSource)).BeginInit();
             this.generalHealthTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.generalDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.generalBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.allergyDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // searchBox
@@ -451,6 +451,53 @@ namespace GroupFinalProject
             this.allergyTab.TabIndex = 1;
             this.allergyTab.Text = "Allergies";
             // 
+            // allergyDataGridView
+            // 
+            this.allergyDataGridView.AutoGenerateColumns = false;
+            this.allergyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.allergyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23});
+            this.allergyDataGridView.DataSource = this.allergyBindingSource;
+            this.allergyDataGridView.Location = new System.Drawing.Point(6, 278);
+            this.allergyDataGridView.Name = "allergyDataGridView";
+            this.allergyDataGridView.Size = new System.Drawing.Size(545, 85);
+            this.allergyDataGridView.TabIndex = 29;
+            this.allergyDataGridView.SelectionChanged += new System.EventHandler(this.allergyDataGridView_SelectionChanged_1);
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "AllergyID";
+            this.dataGridViewTextBoxColumn9.HeaderText = "AllergyID";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "PatientID";
+            this.dataGridViewTextBoxColumn10.HeaderText = "PatientID";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "Allergen";
+            this.dataGridViewTextBoxColumn21.HeaderText = "Allergen";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "Date Discovered";
+            this.dataGridViewTextBoxColumn22.HeaderText = "Date Discovered";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "Medication";
+            this.dataGridViewTextBoxColumn23.HeaderText = "Medication";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            // 
             // allergyBindingSource
             // 
             this.allergyBindingSource.DataMember = "Allergy";
@@ -469,6 +516,7 @@ namespace GroupFinalProject
             // 
             // allergenDateTimePicker
             // 
+            this.allergenDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.allergenDateTimePicker.Location = new System.Drawing.Point(468, 154);
             this.allergenDateTimePicker.Name = "allergenDateTimePicker";
             this.allergenDateTimePicker.Size = new System.Drawing.Size(200, 20);
@@ -950,53 +998,6 @@ namespace GroupFinalProject
             // 
             this.generalTableAdapter.ClearBeforeFill = true;
             // 
-            // allergyDataGridView
-            // 
-            this.allergyDataGridView.AutoGenerateColumns = false;
-            this.allergyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.allergyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23});
-            this.allergyDataGridView.DataSource = this.allergyBindingSource;
-            this.allergyDataGridView.Location = new System.Drawing.Point(6, 278);
-            this.allergyDataGridView.Name = "allergyDataGridView";
-            this.allergyDataGridView.Size = new System.Drawing.Size(545, 85);
-            this.allergyDataGridView.TabIndex = 29;
-            this.allergyDataGridView.SelectionChanged += new System.EventHandler(this.allergyDataGridView_SelectionChanged_1);
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "AllergyID";
-            this.dataGridViewTextBoxColumn9.HeaderText = "AllergyID";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "PatientID";
-            this.dataGridViewTextBoxColumn10.HeaderText = "PatientID";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "Allergen";
-            this.dataGridViewTextBoxColumn21.HeaderText = "Allergen";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "Date Discovered";
-            this.dataGridViewTextBoxColumn22.HeaderText = "Date Discovered";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "Medication";
-            this.dataGridViewTextBoxColumn23.HeaderText = "Medication";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1020,12 +1021,12 @@ namespace GroupFinalProject
             ((System.ComponentModel.ISupportInitialize)(this.patientDatabaseDataSet)).EndInit();
             this.allergyTab.ResumeLayout(false);
             this.allergyTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.allergyDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.allergyBindingSource)).EndInit();
             this.generalHealthTab.ResumeLayout(false);
             this.generalHealthTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.generalDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.generalBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.allergyDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
