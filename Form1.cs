@@ -28,9 +28,11 @@ namespace GroupFinalProject
             tabControl1.SelectTab("generalHealthTab");
         }
 
-        //search bar control //search bar control //search bar control //search bar control //search bar control
+//search bar control //search bar control //search bar control //search bar control //search bar control
         private void searchButton_Click(object sender, EventArgs e)
         {
+            tabControl1.SelectTab("patientTab");
+
             for (int i = 0; i < demographicsDataGridView.Rows.Count; i++)
             {
                 if (!demographicsDataGridView.Rows[i].IsNewRow)
@@ -41,6 +43,12 @@ namespace GroupFinalProject
                         demographicsDataGridView.Rows[i].Selected = false;
                 }
             }
+           
+            Namelabel1.Visible = true;
+            Namelabel1.Text = firstNameBox.Text + " " + lastNameBox.Text;
+
+            namelabel2.Visible = true;
+            namelabel2.Text = firstNameBox.Text + " " + lastNameBox.Text;
         }
 
 // Demographics Control // Demographics Control // DemoGraphics Control // Demographics Control
@@ -141,13 +149,7 @@ namespace GroupFinalProject
         private void iDBox_TextChanged(object sender, EventArgs e)
         {
             iDBoxA.Text = iDBox.Text;
-            iDBoxG.Text = iDBox.Text;
-
-            Namelabel1.Visible = true;
-            Namelabel1.Text = firstNameBox.Text +" "+ lastNameBox.Text;
-            
-            namelabel2.Visible = true;
-            namelabel2.Text = firstNameBox.Text + " " + lastNameBox.Text;
+            iDBoxG.Text = iDBox.Text;   
         }
 
         private void iDBoxA_TextChanged(object sender, EventArgs e)
