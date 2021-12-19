@@ -200,7 +200,12 @@ namespace GroupFinalProject
 
         }
 
-//General Health Controls //General Health Controls //General Health Controls //General Health Controls //General Health Controls
+        private void saveBtnA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //General Health Controls //General Health Controls //General Health Controls //General Health Controls //General Health Controls
         private void iDBoxG_TextChanged(object sender, EventArgs e)
         {
             for (int i = 0; i < generalDataGridView.Rows.Count; i++)
@@ -249,22 +254,12 @@ namespace GroupFinalProject
 
         private void saveBtnG_Click(object sender, EventArgs e)
         {
-            try
-            {
-                connection.Open();
-                OleDbCommand command = new OleDbCommand();
-                command.Connection = connection;
-                command.CommandText = "insert into General (ID, PatientID, MaritalStatus, BloodType, RhType, TobaccoUse, AlcoholUse, Drugs)" +
-                    " values('" + iDBoxG.Text + "','" + patientIDBoxG.Text + "','" + maritalBoxG.Text + "','" + bloodTypeBoxG.Text + "','" + rhBoxG.Text + "','" + tobaccoBoxG.Text + "','" + alacoholBoxG.Text + "','" + drugBoxG.Text +"')";
+          
+        }
 
-                command.ExecuteNonQuery();
-                MessageBox.Show("Data Saved");
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error " + ex);
-            }
-        }  
+        private void editPatientBtnG_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

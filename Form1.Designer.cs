@@ -557,6 +557,7 @@ namespace GroupFinalProject
             this.saveBtnA.TabIndex = 26;
             this.saveBtnA.Text = "Save";
             this.saveBtnA.UseVisualStyleBackColor = true;
+            this.saveBtnA.Click += new System.EventHandler(this.saveBtnA_Click);
             // 
             // modifyBtnA
             // 
@@ -776,6 +777,7 @@ namespace GroupFinalProject
             this.editPatientBtnG.TabIndex = 35;
             this.editPatientBtnG.Text = "Edit Patient";
             this.editPatientBtnG.UseVisualStyleBackColor = true;
+            this.editPatientBtnG.Click += new System.EventHandler(this.editPatientBtnG_Click);
             // 
             // saveBtnG
             // 
